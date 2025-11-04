@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lila Nails & Spa - Belleza y Cuidado de Uñas</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+   
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        
+        .color-primary { background-color: #FFF7F9; } 
+        .color-accent { background-color: #E5989B; } 
+        .text-dark { color: #3E3B39; } 
+        .text-heading { font-family: 'Playfair Display', serif; }
+        .text-body { font-family: 'Inter', sans-serif; }
+
+        
+        input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+            
+            @apply w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E5989B] focus:border-[#E5989B] transition duration-300 text-sm;
+        }
+
+        
+        .btn-accent {
+           
+            @apply bg-[#E5989B] text-white font-semibold rounded-full px-6 py-3 uppercase tracking-wider shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-300 ease-in-out;
+        }
+
+        
+        .header-scrolled {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            background-color: #ffffff; 
+        }
+        
+        
+        .menu-link {
+            
+            @apply relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#E5989B] after:transition-all after:duration-300 hover:after:w-full hover:text-[#E5989B];
+        }
+
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body class="color-primary text-dark text-body antialiased">
+
+   
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            
+            <a href="#" class="text-3xl text-dark font-bold tracking-wider text-heading">
+                Lila Nails <span class="text-pink-300">&</span> Spa
+            </a>
+            
+            
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html" class="menu">Nosotros</a>
+                <a href="servicios.html" class="menu">Servicios</a>
+                <a href="galeria.html" class="menu">Galeria</a>
+                <a href="reserva.html" class="btn-accent py-2 px-4 shadow-none">Reservar Ahora</a>
+            </nav>
+
+           
+            <button id="mobile-menu-button" class="md:hidden text-2xl hover:text-[#E5989B] transition" aria-label="Abrir menú">&#9776;</button>
+        </div>
+    </header>
+
+    
+    <div id="mobile-menu" class="fixed inset-0 bg-dark/95 z-[60] transition-transform duration-300 transform translate-x-full md:hidden">
+        <div class="flex flex-col h-full p-8">
+            
+            <button id="close-menu-button" class="self-end text-white text-4xl hover:text-[#E5989B] transition" aria-label="Cerrar menú">&times;</button>
+            
+            
+            <nav class="flex flex-col space-y-8 mt-16 text-center text-2xl font-semibold">
+                <a href="reserva.html" class="btn-accent mt-8 text-lg menu-close-link-boton">Agenda tu Cita</a>
+            </nav>
+        </div>
+    </div>
+    
+    
+    <section class="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden" style="background-color: #D4AFB9;">
+        
+        <div class="absolute inset-0 bg-cover bg-center opacity-80" style="background-color: #e8bfd8;"></div>
+        <div class="relative z-10 text-center p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-2xl animate-pulse-slow">
+            <h1 class="text-5xl md:text-7xl font-bold text-dark mb-4 text-heading animate-fade-in">
+                Tu Oasis de Manicura
+            </h1>
+            <p class="text-lg md:text-xl text-dark font-medium animate-fade-in delay-200">
+                Donde la elegancia y el cuidado se encuentran.
+            </p>
+            <a href="reserva.html" class="mt-8 inline-block btn-accent animate-scale-up delay-400">
+                Agenda tu Cita
+            </a>
+        </div>
+    </section>
+
+    
+
+    <section id="acerca" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-in-up">
+        <h2 class="text-4xl text-heading font-bold text-center mb-12">Nuestra Esencia</h2>
+
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+            
+            <div class="space-y-8">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-semibold text-[#E5989B] mb-2 text-heading">Misión</h3>
+                    <p class="text-lg">Ofrecer servicios de manicura y pedicura de la más alta calidad, utilizando productos premium y técnicas innovadoras, garantizando una experiencia de bienestar y belleza inigualable para cada clienta.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-semibold text-[#E5989B] mb-2 text-heading">Visión</h3>
+                    <p class="text-lg">Ser el spa de uñas líder y de mayor prestigio en la ciudad, reconocido por la excelencia de nuestro trabajo, la calidez de nuestro servicio y por ser un referente de las últimas tendencias en el arte de las uñas.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-semibold text-[#E5989B] mb-2 text-heading">Valores</h3>
+                    <ul class="space-y-2 list-disc list-inside pl-4 text-lg">
+                        <li>Excelencia: Compromiso con la perfección en cada detalle.</li>
+                        <li>Creatividad: Innovación constante en diseños y estilos.</li>
+                        <li>Higiene: Máximos estándares de limpieza y esterilización.</li>
+                        <li>Integridad: Transparencia y honestidad con nuestras clientas.</li>
+                    </ul>
+                </div>
+            </div>
+
+           
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#E5989B] sticky top-20">
+                <h3 class="text-3xl font-bold text-dark mb-4 text-heading">Nuestra Audiencia</h3>
+                <p class="text-xl mb-4 text-[#E5989B]">
+                    Mujeres que valoran el detalle y el autocuidado.
+                </p>
+                <p class="mb-8">
+                    Nos enfocamos en mujeres modernas, profesionales y conscientes de su imagen personal que buscan no solo un servicio, sino un momento de relajación y mimos. Clientas que aprecian la calidad, la durabilidad y un ambiente sereno y elegante.
+                </p>
+                <a href="servicios.html" class="inline-block btn-accent w-full text-center-boton">
+                    Ver Servicios
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria-mock" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-in-up">
+        <h2 class="text-4xl text-heading font-bold text-center mb-6">Inspiración de Diseño</h2>
+        <p class="text-center text-lg mb-12">Echa un vistazo a nuestros trabajos más recientes.</p>
+        <a href="galeria.html" class="inline-block btn-accent w-full text-center"> Ver Galeria</a>
+    </section>
+>
+    <section id="contacto" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 bg-white p-8 md:p-12 rounded-xl shadow-2xl border-t-8 border-[#E5989B]"> <!-- CAMBIO: Borde superior usa el nuevo rosa -->
+           
+            <div>
+               
+
+                <div class="space-y-4 text-lg mt-8">
+                    
+                    <p class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3 text-[#E5989B]"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-5.6-5.6A19.79 19.79 0 0 1 2 4.18 2 2 0 0 1 4.18 2h3a2 2 0 0 1 2 1.72v4.17a2 2 0 0 1-.59 1.45l-2.43 2.43a18.23 18.23 0 0 0 8.64 8.64l2.43-2.43a2 2 0 0 1 1.45-.59h4.17a2 2 0 0 1 1.72 2v3z"></path></svg>
+                        +57 324 643 3825
+                    </p>
+                    
+                    
+                    <p class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3 text-[#E5989B] flex-shrink-0 mt-1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        CR 89 # 31B 24 - Belén Las Violetas, Medellín
+                    </p>
+
+                
+                </div>
+            </div>
+
+            
+            <div class="relative">
+                <form id="reservation-form" class="space-y-6">
+                    
+                </form>
+
+                
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="bg-dark text-white py-10-fondo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p class="color-footer">&copy; 2025 Lila Nails & Spa by Arianna Zambrano. Todos los derechos reservados.</p>
+            <p class="mt-2 text-gray-400-linea">Elegancia, Cuidado y Calidad en cada detalle.</p>
+            <p class="mt-2 text-lg-ig">
+            Síguenos en Instagram: 
+            <a href="https://www.instagram.com/lilanailsspa?igsh=MXJvdDFucWNzeHVhZQ==" target="_blank" class="hover:text-pink-300 transition-colors duration-200 font-bold">
+                📸 @lilanailsspa
+            </a>
+        </p>
+        </div>
+    </footer>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('main-header');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuCloseLinks = document.querySelectorAll('.menu-close-link');
+            const reservationForm = document.getElementById('reservation-form');
+            const messageBox = document.getElementById('message-box');
+
+            // 1. Animación de Cabecera al hacer Scroll
+            function handleScroll() {
+                // Añade o quita la clase 'header-scrolled' si el scroll es mayor a 50px
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Llama una vez al cargar para verificar la posición inicial
+
+            // 2. Funcionalidad del Menú Móvil
+            
+            function openMenu() {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+            }
+
+            function closeMenu() {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
+            }
+
+            mobileMenuButton.addEventListener('click', openMenu);
+            closeMenuButton.addEventListener('click', closeMenu);
+
+            // Cierra el menú al hacer clic en un enlace (para navegación por anclas)
+            menuCloseLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Previene el comportamiento por defecto si es necesario, aunque en este caso solo cerramos
+                    closeMenu();
+                });
+            });
+
+
+            
+            
+            // 4. Animación de revelado al hacer scroll (Fade-in-up)
+            const faders = document.querySelectorAll('.fade-in-up');
+
+            const appearOptions = {
+                threshold: 0.2, // La sección aparece cuando el 20% es visible
+                rootMargin: "0px 0px -100px 0px"
+            };
+
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('show');
+                        appearOnScroll.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+
+        });
+    </script>
+</body>
+</html>

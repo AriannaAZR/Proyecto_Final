@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Lila Nails Art | Inspiración en tus Manos</title>
+    <!-- Carga de Tailwind CSS para estilos modernos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Configuraciones de fuente para un toque limpio */
+        body {
+            font-family:'Courier New', Courier, monospace;
+            background-color: #e8bfd8; /* Rosa pastel muy claro */
+        }
+        /* Estilos personalizados para el cursor y transiciones */
+        .gallery-item:hover {
+            cursor: pointer;
+            transform: scale(1.03);
+            transition: transform 0.3s ease;
+        }
+        /* Estilos para el modal/lightbox */
+        .modal {
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 50;
+            display: none; /* Se oculta por defecto */
+        }
+        .modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        
+    </style>
+</head>
+<body class="antialiased">
+
+    
+    <header class="fondo">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-extrabold text-white mb-2-text">
+                Lila Nails <span class="text-pink-300">Arte</span> Galeria
+            </h1>
+            <p class="text-5xl font-extrabold text-white mb-2-text">
+                Descubre el arte que llevas en la punta de tus dedos.
+                
+            </p>
+            <br>
+            <a href="reserva.html" class="btn-accent py-2 px-4 shadow-none">Reservar Ahora</a>
+             <a href="index.html" class="menu-t">Inicio</a>
+             <a href="servicios.html" class="menu-t">Servicios</a>
+             <a href="galeria.html" class="menu-t">Fotos</a>
+            
+        </div>
+
+        
+    </header>
+
+    <!-- CUERPO PRINCIPAL DE LA GALERÍA -->
+    <main class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+        
+        <!-- Contenedor de la Rejilla (GRID) -->
+        <div id="gallery-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+            <!-- ÍTEM 1: Mármol de Lujo -->
+            <div class="gallery-item bg-white rounded-xl shadow-lg hover:shadow-2xl overflow-hidden" 
+                 data-description="Un diseño sofisticado y moderno que simula el veteado del mármol, acentuado con detalles plateados.">
+                <img src="img/f1 (6).jpeg" 
+                     alt="Uñas con diseño de mármol rosa y líneas doradas" 
+                     class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-pink-700">Mármol de Lujo</h3>
+                    <p class="text-sm text-gray-500">Gel | Acrílico</p>
+                </div>
+            </div>
+
+            <!-- ÍTEM 2: Francés Invertido -->
+            <div class="gallery-item bg-white rounded-xl shadow-lg hover:shadow-2xl overflow-hidden" 
+                 data-description="La clásica manicura francesa, pero con el color de acento aplicado en la base de la uña (lúnula) en un tono vibrante.">
+                <img src="img/f2.jpeg" 
+                     alt="Diseño de uñas francés en tono rosado" 
+                     class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-purple-700">Francés con brillo</h3>
+                    <p class="text-sm text-gray-500">Semi-permanente</p>
+                </div>
+            </div>
+
+            <!-- ÍTEM 3: Flores Minimalistas -->
+            <div class="gallery-item bg-white rounded-xl shadow-lg hover:shadow-2xl overflow-hidden" 
+                 data-description="Diseño delicado con pequeñas flores dibujadas a mano sobre una base nude. Perfecto para primavera o un look sutil.">
+                <img src="img/f4.jpeg" 
+                     alt="Uñas con pequeñas flores dibujadas a mano" 
+                     class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-red-500">Flores Minimalistas</h3>
+                    <p class="text-sm text-gray-500">Pintado a mano</p>
+                </div>
+            </div>
+
+            <!-- ÍTEM 4: Glitter Galáctico -->
+            <div class="gallery-item bg-white rounded-xl shadow-lg hover:shadow-2xl overflow-hidden" 
+                 data-description="Manicura Francesa Estilizada y Glitter, perfecto para un look sofisticado con un toque mágico.">
+                <img src="img/f3.jpeg" 
+                     alt="Uñas con glitter negro y plateado holográfico" 
+                     class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Glitter Morado</h3>
+                    <p class="text-sm text-gray-500">Esmalte | Brillo</p>
+                </div>
+            </div>
+
+            
+            <div class="gallery-item bg-white rounded-xl shadow-lg hover:shadow-2xl overflow-hidden" 
+                 data-description="Diseño 'Baby Boomer' con punta blanca y base nude. Destaca el nail art con corazón blanco, textura de encaje, pan de oro y cristales en el área de la sonrisa francesa.">
+                <img src="img/f1 (7).jpeg" 
+                     alt="" 
+                     class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-green-600">Baby Boomer Romántico</h3>
+                    <p class="text-sm text-gray-500">Acrílico</p>
+                </div>
+            </div>
+            
+           
+            <div class="gallery-item bg-white rounded-xl shadow-lg hover:shadow-2xl overflow-hidden" 
+                 data-description="Acabado ultra brillante que refleja como un espejo. Un look futurista y de alto impacto en cromo.">
+                <img src="img/f5.jpeg" 
+                     alt="Uñas con efecto cromo o espejo plateado" 
+                     class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-600">Efecto Mate</h3>
+                    <p class="text-sm text-gray-500">Mate</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item bg-white rounded-xl shadow-lg hover:shadow-2xl overflow-hidden" 
+                 data-description="Diseño 'Baby Boomer' con punta blanca y base nude. Destaca el nail art con corazón blanco, textura de encaje, pan de oro y cristales en el área de la sonrisa francesa.">
+                <img src="img/f6.jpeg" 
+                     alt="" 
+                     class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-green-600">Francés Romántico Estilizado</h3>
+                    <p class="text-sm text-gray-500">Acrílico</p>
+                </div>
+            </div>
+            <div class="gallery-item bg-white rounded-xl shadow-lg hover:shadow-2xl overflow-hidden" 
+                 data-description="Diseño elegante, romántico y lujoso, ideal para ocasiones especiales como bodas, eventos o para quienes buscan un look distintivo y sofisticado en su día a día.">
+                <img src="img/f7 (2).jpeg" 
+                     alt="" 
+                     class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-green-600">Francés Baby Boomer con Toque de Lujo y Corazón</h3>
+                    <p class="text-sm text-gray-500">Acrílico</p>
+                </div>
+            </div>
+        </div> 
+
+    </main>
+
+    
+    
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-dark text-white py-10-fondo">
+        <p class="color-footer">¡Gracias por visitar nuestra galería! Sigue explorando más diseños espectaculares.</p>
+        <p class="mt-2 text-lg">
+            Síguenos en Instagram: 
+            <a href="https://www.instagram.com/lilanailsspa?igsh=MXJvdDFucWNzeHVhZQ==" target="_blank" class="hover:text-pink-300 transition-colors duration-200 font-bold">
+                📸 @lilanailsspa
+            </a>
+        </p>
+    </footer>
+
+    <!-- SCRIPT JAVASCRIPT para la funcionalidad del Lightbox -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const closeModalButton = document.getElementById('close-modal');
+
+            // Función para abrir el modal
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('img');
+                    const title = item.querySelector('h3').textContent;
+                    const description = item.getAttribute('data-description');
+
+                    modalImage.src = img.src;
+                    modalImage.alt = img.alt;
+                    modalTitle.textContent = title;
+                    modalDescription.textContent = description;
+                    
+                    modal.style.display = 'flex'; // Muestra el modal
+                });
+            });
+
+            // Función para cerrar el modal al hacer clic en el botón 'X'
+            closeModalButton.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            // Función para cerrar el modal al hacer clic fuera de la imagen
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+p.color{
+    color: black;
+}
+.text-color {
+    color: red;
+}
+
+a.menu:hover{
+    color: plum;
+}
+.block menu:hover{
+color: plum;
+}
+h1.text-5xl.font-extrabold.text-white.mb-2-text{
+    color: #3E3B39;
+    font-family: 'Playfair Display', serif;
+    background-color: rgb(255 255 255 / 0.7);
+}
+p.text-5xl.font-extrabold.text-white.mb-2-text{
+    color: #3E3B39;
+    font-family: 'Playfair Display', serif;
+    background-color: rgb(255 255 255 / 0.7);
+}
+
+div.hidden.md:flex.space-x-6.items-center{
+    flex-direction: row;
+    align-items: center;
+}
+a.menu-t{
+    font-family: 'Inter', sans-serif;
+    color: #3E3B39;
+    align-items: center;
+margin: auto;
+}
+a.menu-t:hover{
+color: plum;
+    background-color: white;
+}
+
+a.btn-accent.py-2.px-4.shadow-none{
+    font-family: 'Inter', sans-serif;
+color: #3E3B39;
+
+
+}
+p.mt-2.text-gray-400-linea{
+
+    color: black;
+}
+p.color-footer{
+    color: black;
+}
+p.mt-2.text-lg-ig{
+    color: black;
+}
+footer.bg-dark.text-white.py-10-fondo{
+background-color: rgb(229 152 155);
+}
+a.inline-block.btn-accent.w-full.text-center-boton:hover{
+ color: rgb(229 152 155);   
+ background-color: white;
+}
+a.inline-block.btn-accent.w-full.text-center:hover{
+    color: rgb(229 152 155);
+}
+a.btn-accent.py-2.px-4.shadow-none:hover{
+    color: plum;
+    background-color: white;
+}
+a.btn-accent.mt-8.text-lg.menu-close-link-boton:hover{
+    color: plum;
+}
+a.mt-8.inline-block.btn-accent.animate-scale-up.delay-400:hover{
+    color: plum;
+    background-color: white;
+}
+div.absolute.inset-0.bg-cover.bg-center.opacity-70{
+    background-color: e8bfd8;
+}
+a.mt-8.inline-block.btn-accent:hover{
+    color: plum;
+    background-color: white;
+}

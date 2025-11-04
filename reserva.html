@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lila Nails & Spa - Belleza y Cuidado de Uñas Reservas</title>
+    <!-- Incluimos Tailwind CSS para un diseño responsivo y moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Usamos una fuente elegante y fácil de leer -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- El enlace a style.css se mantiene, aunque los estilos principales están incrustados -->
+    <link rel="stylesheet" href="css/style.css"> 
+    <style>
+        /* Definición de la paleta de colores sofisticada y suave */
+        /* Nota: Se han usado los valores rosados que definiste en la versión anterior: #E5989B */
+        .color-primary { background-color: #FFF7F9; } /* Blanco rosado muy claro */
+        .color-accent { background-color: #E5989B; } /* Rosa Suave - Color de acento */
+        .text-dark { color: #3E3B39; } /* Taupe Oscuro */
+        .text-heading { font-family: 'Playfair Display', serif; }
+        .text-body { font-family: 'Inter', sans-serif; }
+
+        /* Estilos personalizados para el formulario */
+        input[type="text"], input[type="email"], input[type="tel"], textarea, select, input[type="date"], input[type="time"] {
+            /* Uso de @apply para clases de Tailwind dentro de <style> */
+            /* Se incluyen 'date' y 'time' en la lista para asegurar el mismo estilo visual */
+            @apply w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E5989B] focus:border-[#E5989B] transition duration-300 text-sm;
+        }
+
+        /* Estilo base del botón de acento (Reintroducido para el botón de reserva) */
+        .btn-accent {
+            @apply bg-[#E5989B] text-white font-semibold rounded-full px-6 py-3 uppercase tracking-wider shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-300 ease-in-out;
+        }
+
+        /* Estilo para el contenedor del mensaje de éxito/error */
+        .message-box {
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+    </style>
+</head>
+<body class="color-primary text-dark text-body antialiased">
+    <section id="contacto" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 bg-white p-8 md:p-12 rounded-xl shadow-2xl border-t-8 border-[#E5989B]">
+            <!-- Texto de Contacto -->
+            <div>
+                <h2 class="text-4xl text-heading font-bold text-dark mb-4">¡Reserva tu Momento!</h2>
+                <p class="text-lg mb-6">
+                    Utiliza nuestro formulario para solicitar una cita. Te contactaremos en breve para confirmar la disponibilidad y el servicio que deseas. ¡Estamos ansiosos por recibirte!
+                </p>
+
+                <div class="space-y-4 text-lg">
+                    <p class="flex items-center">
+                        <!-- CAMBIO: Icono usa el color de acento -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3 text-[#E5989B]"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-5.6-5.6A19.79 19.79 0 0 1 2 4.18 2 2 0 0 1 4.18 2h3a2 2 0 0 1 2 1.72v4.17a2 2 0 0 1-.59 1.45l-2.43 2.43a18.23 18.23 0 0 0 8.64 8.64l2.43-2.43a2 2 0 0 1 1.45-.59h4.17a2 2 0 0 1 1.72 2v3z"></path></svg>
+                        +57 324 643 3825
+                    </p>
+                    
+                    <p class="flex items-center">
+                        <!-- CAMBIO: Icono usa el color de acento -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3 text-[#E5989B]"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        CR 89 # 31B 24 - Belén Las Violetas 
+                    </p>
+                </div>
+            </div>
+
+            <!-- Formulario y Contenedor de Mensaje -->
+            <div class="relative">
+                <!-- Se agregó el ID 'reservation-form' para el script -->
+                <form id="reservation-form" class="space-y-4"> 
+                    <!-- Se agregaron IDs a los inputs para recopilar datos -->
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre Completo" required>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Número de Teléfono" required>
+                    
+                    <!-- Selector de Servicio (Se agregó el ID 'servicio') -->
+                    <select id="servicio" name="servicio" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E5989B] transition duration-300 text-sm appearance-none cursor-pointer">
+                        <option value="" disabled selected>Selecciona un Servicio Principal</option>
+                        <option value="semipermanente">Semipermanente ($45.000)</option>
+                        <option value="acrilico">Acrílico Esculpido ($100.000)</option>
+                        <option value="bano_acrilico">Baño Acrílico ($65.000)</option>
+                        <option value="press_on">Set Press On ($80.000)</option>
+                        <option value="otro">Otro / Consulta</option>
+                    </select>
+
+                    <!-- CAMBIO: Campos de Fecha y Hora con calendario nativo -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="date" id="fecha_preferida" name="fecha_preferida" title="Selecciona la fecha de tu cita" required>
+                        <input type="time" id="hora_preferida" name="hora_preferida" title="Selecciona la hora de tu cita" required>
+                    </div>
+
+                    <!-- Textarea (Se agregó el ID 'mensaje') -->
+                    <textarea id="mensaje" name="mensaje" placeholder="Mensaje Adicional o Detalles del Diseño" rows="4"></textarea>
+
+                    <button type="submit" class="btn-accent w-full mt-4">
+                        Solicitar Reserva por WhatsApp
+                    </button>
+                </form>
+
+                <!-- Contenedor para mensajes de éxito/error (usado por JS) -->
+                <div id="message-box" class="message-box absolute inset-0 rounded-xl flex items-center justify-center p-8 transition-opacity duration-500 opacity-0 pointer-events-none">
+                    <div class="text-center">
+                        <!-- Icono usa el color de acento -->
+                        <svg class="w-16 h-16 mx-auto mb-4 text-[#E5989B]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l-2.926 2.926L12 15l-2.074-2.074L7 8"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <p id="message-text" class="text-2xl font-semibold text-dark text-heading">Abriendo WhatsApp...</p>
+                        <p class="text-md text-gray-600 mt-2">Serás redirigido para enviar tu solicitud.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer class="bg-dark text-white py-10-fondo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p class="color-footer">&copy; 2025 Lila Nails & Spa by Arianna Zambrano. Todos los derechos reservados.</p>
+            <p class="mt-2 text-gray-400-linea">Elegancia, Cuidado y Calidad en cada detalle.</p>
+            <p class="mt-2 text-lg-ig">
+            Síguenos en Instagram: 
+            <a href="https://www.instagram.com/lilanailsspa?igsh=MXJvdDFucWNzeHVhZQ==" target="_blank" class="hover:text-pink-300 transition-colors duration-200 font-bold">
+                📸 @lilanailsspa
+            </a>
+        </p>
+        </div>
+    </footer>
+
+    <!-- Bloque de JavaScript para la funcionalidad de WhatsApp -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reservationForm = document.getElementById('reservation-form');
+            const messageBox = document.getElementById('message-box');
+            
+            // Este script es el que se usa para el color del texto seleccionado en <select>
+            const select = document.getElementById('servicio');
+            
+            function updateSelectColor(target) {
+                if (target.value === "") {
+                    target.style.color = '#6b7280'; // Gris para placeholder
+                } else {
+                    target.style.color = '#3E3B39'; // Color oscuro para texto seleccionado
+                }
+            }
+
+            if (select) {
+                select.addEventListener('change', (e) => updateSelectColor(e.target));
+                updateSelectColor(select);
+            }
+
+            // 3. Manejo de Envío de Formulario (Envío a WhatsApp)
+            if (reservationForm) {
+                reservationForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Detiene el envío real del formulario
+
+                    // Obtener los valores del formulario usando los IDs
+                    const nombre = document.getElementById('nombre').value;
+                    const telefono = document.getElementById('telefono').value;
+                    const servicio = select ? select.options[select.selectedIndex].text : 'No especificado'; 
+                    
+                    // CAMBIO: Obtener la fecha y la hora de los nuevos campos
+                    const fecha = document.getElementById('fecha_preferida').value; 
+                    const hora = document.getElementById('hora_preferida').value;
+                    
+                    const mensajeAdicional = document.getElementById('mensaje').value;
+
+                    // Número de WhatsApp (solo dígitos, incluyendo código de país 57 para Colombia)
+                    const waNumber = '573246433825'; 
+
+                    // Construir el mensaje de WhatsApp pre-llenado
+                    let waMessage = `Hola, tengo una solicitud de reserva. Estos son mis datos:\n\n`;
+                    waMessage += `*Nombre:* ${nombre}\n`;
+                    waMessage += `*Teléfono:* ${telefono}\n`;
+                    waMessage += `*Servicio Solicitado:* ${servicio}\n`;
+                    
+                    // CAMBIO: Incluir Fecha y Hora combinadas
+                    waMessage += `*Fecha y Hora Preferida:* ${fecha} a las ${hora}\n`;
+                    
+                    if (mensajeAdicional.trim() !== '') {
+                        waMessage += `*Detalles Adicionales:* ${mensajeAdicional}\n`;
+                    }
+
+                    waMessage += `\nPor favor, confirmen disponibilidad. ¡Gracias!`;
+
+                    // Codificar el mensaje para la URL
+                    const encodedMessage = encodeURIComponent(waMessage);
+                    
+                    // Crear el enlace de WhatsApp
+                    const waUrl = `https://wa.me/${waNumber}?text=${encodedMessage}`;
+
+                    // Mostrar mensaje de redirección
+                    if (messageBox) {
+                        messageBox.classList.remove('opacity-0', 'pointer-events-none');
+                        messageBox.classList.add('opacity-100');
+                    }
+
+                    // Abrir el enlace en una nueva ventana/pestaña
+                    setTimeout(() => {
+                        window.open(waUrl, '_blank');
+                        
+                        // Ocultar la caja de mensajes y resetear el formulario
+                        if (messageBox) {
+                            messageBox.classList.remove('opacity-100');
+                            messageBox.classList.add('opacity-0', 'pointer-events-none');
+                        }
+                        reservationForm.reset(); 
+                        
+                        // Restablecer color de placeholder del select
+                        if (select) updateSelectColor(select); 
+                    }, 1000); // 1 segundo de retraso
+                });
+            }
+        });
+    </script>
+</body>
+</html>
